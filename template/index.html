@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mental Health Tracker</title>
+    <style>
+        /* Force cream/light theme */
+        body {
+            background-color: #fef6e4;
+            color: #3e3e3e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #56c596;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #000;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #56c596;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a982;
+        }
+
+        .suggestions {
+            background-color: #e8f8f5;
+            padding: 20px;
+            margin-top: 25px;
+            border-left: 5px solid #56c596;
+            border-radius: 8px;
+        }
+
+        .link {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .link a {
+            color: #56c596;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Prevent dark mode interference */
+        @media (prefers-color-scheme: dark) {
+            body, input, select, textarea {
+                background-color: #d4dcdc !important;
+                color: #000 !important;
+            }
+
+            .container {
+                background-color: #0e378a !important;
+            }
+
+            .suggestions {
+                background-color: #5bb4a4 !important;
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🧠 Mental Health Tracker</h1>
+    <form method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="mood">How are you feeling today?</label>
+        <select name="mood" required>
+            <option value="Happy">Happy</option>
+            <option value="Sad">Sad</option>
+            <option value="Stressed">Stressed</option>
+            <option value="Angry">Angry</option>
+            <option value="Okay">Okay</option>
+        </select>
+
+        <label for="sleep">Did you sleep well last night?</label>
+        <select name="sleep" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="screen">Screen time today (in hours):</label>
+        <input type="number" name="screen" min="0" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if suggestions %}
+    <div class="suggestions">
+        <h3>💡 Suggestions:</h3>
+        <p>{{ suggestions|safe }}</p>
+    </div>
+    {% endif %}
+
+    <div class="link">
+        <a href="/graph">📊 View Mood & Sleep Graphs</a>
+    </div>
+</div>
+
+</body>
+</html>
