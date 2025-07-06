@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>📊 Mood & Sleep Graphs</title>
+    <style>
+        body {
+            background-color: #0e378a; /* dark theme */
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .graph-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            color: #000;
+        }
+
+        h1 {
+            text-align: center;
+            color: #56c596;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #2c7be5;
+            margin-top: 30px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin-top: 10px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #56c596;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Optional: adapt to user system theme */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #0e378a !important;
+                color: #ffffff !important;
+            }
+
+            .graph-container {
+                background-color: #ffffff !important;
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="graph-container">
+    <h1>📊 Mood & Sleep Data Visualization</h1>
+
+    <h2>Mood Distribution</h2>
+    <img src="{{ url_for('static', filename='mood_pie.png') }}" alt="Mood Pie Chart">
+
+    <h2>Screen Time Distribution</h2>
+    <img src="{{ url_for('static', filename='screen_bar.png') }}" alt="Screen Time Bar Chart">
+
+    <h2>Sleep Quality</h2>
+    <img src="{{ url_for('static', filename='sleep_bar.png') }}" alt="Sleep Quality Bar Chart">
+
+    <a href="/">← Back to Tracker</a>
+</div>
+
+</body>
+</html>
