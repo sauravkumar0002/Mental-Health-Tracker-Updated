@@ -4,28 +4,26 @@
     <meta charset="UTF-8">
     <title>Mental Health Tracker</title>
     <style>
-        /* Force cream/light theme */
         body {
-            background-color: #fef6e4;
-            color: #3e3e3e;
+            background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png'), #121212;
+            color: #f0f0f0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            -webkit-font-smoothing: antialiased;
         }
 
         .container {
             max-width: 600px;
             margin: 60px auto;
-            background-color: #ffffff;
+            background-color: #1e1e1e;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 255, 170, 0.1);
         }
 
         h1 {
             text-align: center;
-            color: #56c596;
+            color: #56f0c1;
             margin-bottom: 30px;
         }
 
@@ -43,18 +41,18 @@
             padding: 12px;
             margin-top: 5px;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             border-radius: 8px;
-            background-color: #fff;
-            color: #000;
+            background-color: #2a2a2a;
+            color: #ffffff;
             font-size: 14px;
         }
 
         button {
             width: 100%;
             padding: 14px;
-            background-color: #56c596;
-            color: white;
+            background-color: #56f0c1;
+            color: #000;
             font-size: 16px;
             font-weight: bold;
             border: none;
@@ -64,14 +62,14 @@
         }
 
         button:hover {
-            background-color: #45a982;
+            background-color: #42d7a8;
         }
 
         .suggestions {
-            background-color: #e8f8f5;
+            background-color: #1a3a33;
             padding: 20px;
             margin-top: 25px;
-            border-left: 5px solid #56c596;
+            border-left: 5px solid #56f0c1;
             border-radius: 8px;
         }
 
@@ -81,30 +79,13 @@
         }
 
         .link a {
-            color: #56c596;
+            color: #56f0c1;
             text-decoration: none;
             font-weight: bold;
         }
 
         .link a:hover {
             text-decoration: underline;
-        }
-
-        /* Prevent dark mode interference */
-        @media (prefers-color-scheme: dark) {
-            body, input, select, textarea {
-                background-color: #d4dcdc !important;
-                color: #000 !important;
-            }
-
-            .container {
-                background-color: #0e378a !important;
-            }
-
-            .suggestions {
-                background-color: #5bb4a4 !important;
-                color: #000 !important;
-            }
         }
     </style>
 </head>
@@ -118,17 +99,17 @@
 
         <label for="mood">How are you feeling today?</label>
         <select name="mood" required>
-            <option value="Happy">Happy</option>
-            <option value="Sad">Sad</option>
-            <option value="Stressed">Stressed</option>
-            <option value="Angry">Angry</option>
-            <option value="Okay">Okay</option>
+            <option value="Happy">😊 Happy</option>
+            <option value="Sad">😢 Sad</option>
+            <option value="Stressed">😰 Stressed</option>
+            <option value="Angry">😠 Angry</option>
+            <option value="Okay">😐 Okay</option>
         </select>
 
         <label for="sleep">Did you sleep well last night?</label>
         <select name="sleep" required>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
+            <option value="Yes">😴 Yes</option>
+            <option value="No">🌙 No</option>
         </select>
 
         <label for="screen">Screen time today (in hours):</label>
